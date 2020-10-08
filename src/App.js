@@ -12,9 +12,9 @@ class App extends Component {
         <div className="container col-md-12">
           <div className="col-md-4">
             <h1>Générateur de citations</h1>
-              <Form></Form>
+              <Form/>
           </div>
-          <ShowQuotes quote="test"/>
+          <ShowQuotes/>
         </div>
       </div>
     );

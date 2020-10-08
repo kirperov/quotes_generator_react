@@ -2,31 +2,29 @@ import React, {useState} from 'react';
 import '../App.css';
 import Select from './Select';
 import ButtonGenerate from './ButtonGenerate';
-import {nbTheme, nbQuotes} from './constants.js'
+import {nbTheme, nbQuotes} from './constants.js';
  
 const Form = props => {
-  const [nbTheme1, setTheme] = useState(nbTheme);
-  const [nbQuotes1, setQuote] = useState(nbQuotes);
-  function handleChange(newValue) {
-    setTheme(newValue);
-    console.log(newValue)
+  const [numberTheme, setTheme] = useState(nbTheme);
+  const [numberQuotes, setQuote] = useState(nbQuotes);
+  function handleChangeTheme(newValueTheme) {
+    setTheme(newValueTheme);
   }
 
- 
-
-      return (
-        <div>
-          <form>
-            <span>Choix Thème</span>
-            <Select onChange={handleChange} selectOption={nbTheme} ></Select>
-            <span>Choix Citation</span>
-            <Select selectOption={nbQuotes1}></Select>
-            <ButtonGenerate></ButtonGenerate>
-
-          </form>
-          <button onClick={(event) => console.log(event.target.value)}></button>
-        </div>
-      )
+  function handleChangeQuote(newValueQuote) {
+    setQuote(newValueQuote);
+  }
+    return (
+      <div>
+        <form>
+          <span>Choix Thème</span>
+          <Select onChange={handleChangeTheme} selectOption={nbTheme}/>
+          <span>Choix Citation</span>
+          <Select onChange={handleChangeQuote} selectOption={nbQuotes}/>
+          <ButtonGenerate />
+        </form>
+      </div>
+    )
 }
 
 export default Form;

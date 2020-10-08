@@ -1,4 +1,3 @@
-
 let divAlertError = document.createElement("div"),
 containerQuotes = document.getElementById("quotes"),
 btnGenerateQuote = document.getElementById("generate"),
@@ -10,15 +9,18 @@ generatedQuote = [],
 nbThemeLength = selectTheme.length,
 nbQuotesLength = selectNumbers.length,
 numberRand;
-
+ 
 function generateRandomNumber(num) {
   return Math.floor((Math.random() * num));
 }
+
+ 
 
 selectNumbers.addEventListener("change", function() {
   numberQuotes = parseInt(this.value);
 });
 
+ 
 selectTheme.addEventListener("change", function() {
   numberTheme = parseInt(this.value);
 });
@@ -65,10 +67,10 @@ function generateRandomQuotes(themeChoice) {
   }
    
   if(quotesLength > numberQuotes) {
-        let newNumber = quotesLength - numberQuotes;
-        for(let i = 0; i < newNumber; i++) {
-              containerQuotes.removeChild(containerQuotes.lastChild);
-        }
+      let newNumber = quotesLength - numberQuotes;
+      for(let i = 0; i < newNumber; i++) {
+            containerQuotes.removeChild(containerQuotes.lastChild);
+      }
   }
 }
 
