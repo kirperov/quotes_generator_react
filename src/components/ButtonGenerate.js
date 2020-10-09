@@ -1,7 +1,6 @@
 import React  from 'react';
 import '../App.css';
  
-
 const ButtonGenerate = props => {
       const onClickButton  = event => {
             event.preventDefault();

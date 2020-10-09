@@ -4,7 +4,7 @@ import Select from './Select';
 import ButtonGenerate from './ButtonGenerate';
 import {nbTheme, nbQuotes} from './constants.js';
  
-const Form = props => {
+const Form = ({parentCallback}) => {
   const [numberTheme, setTheme] = useState(nbTheme);
   const [numberQuotes, setQuote] = useState(nbQuotes);
   function handleChangeTheme(newValueTheme) {
@@ -14,17 +14,18 @@ const Form = props => {
   function handleChangeQuote(newValueQuote) {
     setQuote(newValueQuote);
   }
-    return (
-      <div>
-        <form>
-          <span>Choix Thème</span>
-          <Select onChange={handleChangeTheme} selectOption={nbTheme}/>
-          <span>Choix Citation</span>
-          <Select onChange={handleChangeQuote} selectOption={nbQuotes}/>
-          <ButtonGenerate />
-        </form>
-      </div>
-    )
+  parentCallback(numberTheme);
+  return (
+    <div>
+      <form>
+        <span>Choix Thème</span>
+        <Select onChange={handleChangeTheme} selectOption={nbTheme}/>
+        <span>Choix Citation</span>
+        <Select onChange={handleChangeQuote} selectOption={nbQuotes}/>
+        <ButtonGenerate />
+      </form>
+    </div>
+  )
 }
 
 export default Form;

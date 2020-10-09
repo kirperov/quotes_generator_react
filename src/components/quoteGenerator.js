@@ -1,10 +1,3 @@
-let divAlertError = document.createElement("div"),
-containerQuotes = document.getElementById("quotes"),
-btnGenerateQuote = document.getElementById("generate"),
-selectTheme = document.getElementById("themes"),
-selectNumbers = document.getElementById("numbers"),
-numberTheme = parseInt(selectTheme.options[selectTheme.selectedIndex].value),
-numberQuotes = parseInt(selectNumbers.options[selectNumbers.selectedIndex].value),
 generatedQuote = [],
 nbThemeLength = selectTheme.length,
 nbQuotesLength = selectNumbers.length,
@@ -14,34 +7,8 @@ function generateRandomNumber(num) {
   return Math.floor((Math.random() * num));
 }
 
- 
-
-selectNumbers.addEventListener("change", function() {
-  numberQuotes = parseInt(this.value);
-});
-
- 
-selectTheme.addEventListener("change", function() {
-  numberTheme = parseInt(this.value);
-});
-
 function generateRandomQuotes(themeChoice) {
-  let quotes = [ 
-        quotesOne = [
-              quotesBlockOne = ["Avec", "Quelle que soit", "Tant que durera", "Dans", "Après"],
-              quotesBlockTwo = ["l'humanité,", "la vie,", "le temps,", "la civilisation", "l'époque,"],
-              quotesBlockTree = ["les choses vont", "le hommes vont", "la philosophie va","les téchnologies vont", "le monde va"],
-              quotesBlockFour = ["progresser.", "se développer.", "changer.", "s'ameliorer.", "disparaitre."]
-        ],
-        quotesTwo = [
-              quotesBlockOne = ["Le travail", "La haine", "L'amour", "La société", "Le progrès"],
-              quotesBlockTwo = ["permet,", "oblige,", "impose,", "donne la possibilité,", "demande,"],
-              quotesBlockTree = ["de comprendre", "de changer", "à maitriser", "de simplifier", "d'ameliorer"],
-              quotesBlockFour = ["la vie.", "les habitudes.", "les choses.", "les téchnologies.", "le monde."]
-        ]
-  ],
   quotesLength = containerQuotes.childNodes.length;
-
   if(themeChoice >= 0 && themeChoice <= nbThemeLength && numberQuotes > 0 && numberQuotes <= nbQuotesLength) {
         divAlertError.remove();
         for(let i = 0; i < numberQuotes; i++) {
@@ -74,7 +41,4 @@ function generateRandomQuotes(themeChoice) {
   }
 }
 
-btnGenerateQuote.addEventListener("click", function() {
-  generateRandomQuotes(numberTheme);
-});
 
