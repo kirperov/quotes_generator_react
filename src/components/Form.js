@@ -3,10 +3,11 @@ import '../App.css';
 import Select from './Select';
 import ButtonGenerate from './ButtonGenerate';
 import {nbTheme, nbQuotes} from './constants.js';
- 
+
 const Form = ({parentCallback}) => {
-  const [numberTheme, setTheme] = useState(nbTheme);
-  const [numberQuotes, setQuote] = useState(nbQuotes);
+  const [numberTheme = 0, setTheme] = useState(nbTheme);
+  const [numberQuotes = 0, setQuote] = useState(nbQuotes);
+
   function handleChangeTheme(newValueTheme) {
     setTheme(newValueTheme);
   }
@@ -14,15 +15,19 @@ const Form = ({parentCallback}) => {
   function handleChangeQuote(newValueQuote) {
     setQuote(newValueQuote);
   }
-  parentCallback(numberTheme);
+
+  function submit() {
+    parentCallback(numberTheme,numberQuotes);
+  }
   return (
+
     <div>
       <form>
         <span>Choix Thème</span>
         <Select onChange={handleChangeTheme} selectOption={nbTheme}/>
         <span>Choix Citation</span>
         <Select onChange={handleChangeQuote} selectOption={nbQuotes}/>
-        <ButtonGenerate />
+        <ButtonGenerate onClick={submit}/>
       </form>
     </div>
   )

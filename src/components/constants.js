@@ -11,7 +11,6 @@ export const nbQuotes =  [
       { label: 5, value: 4 }
 ];
 
- 
 const quotesOne = [
       ["Avec", "Quelle que soit", "Tant que durera", "Dans", "Après"],
       ["l'humanité,", "la vie,", "le temps,", "la civilisation", "l'époque,"],
@@ -25,8 +24,6 @@ const quotesTwo = [
       ["la vie.", "les habitudes.", "les choses.", "les téchnologies.", "le monde."]  
 ]
 
- 
-let quotes = [];
+export let quotes = [];
 quotes.push(quotesOne);
 quotes.push(quotesTwo);
-//  console.log(quotes);
