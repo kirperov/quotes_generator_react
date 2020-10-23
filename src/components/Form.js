@@ -5,8 +5,8 @@ import ButtonGenerate from './ButtonGenerate';
 import {nbTheme, nbQuotes} from './constants.js';
 
 const Form = ({parentCallback}) => {
-  const [numberTheme = 0, setTheme] = useState(nbTheme);
-  const [numberQuotes = 0, setQuote] = useState(nbQuotes);
+  const [numberTheme, setTheme] = useState(nbTheme[0].value);
+  const [numberQuotes, setQuote] = useState(nbQuotes[0].value);
 
   function handleChangeTheme(newValueTheme) {
     setTheme(newValueTheme);
@@ -20,7 +20,6 @@ const Form = ({parentCallback}) => {
     parentCallback(numberTheme,numberQuotes);
   }
   return (
-
     <div>
       <form>
         <span>Choix Thème</span>

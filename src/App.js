@@ -4,6 +4,7 @@ import ShowQuotes from './components/ShowQuotes'
 import './App.css';
 import {main} from './components/quoteGenerator.js';
 
+ 
 class App extends Component {
   constructor(props) {
     super(props);
@@ -12,8 +13,8 @@ class App extends Component {
     };
   }
 
-  callback = (nbTheme, nbQuotes) => {
-    var newQuotes = main(nbTheme, nbQuotes);
+  callback = (nbTheme, nbQuotes,quotes) => {
+    var newQuotes = main(nbTheme, nbQuotes, quotes);
     this.setState({ generatedQuotes:  newQuotes});
   } 
  
