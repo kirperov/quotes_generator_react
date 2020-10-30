@@ -1,7 +1,6 @@
 import React, { Component }  from 'react';
 import Form from './components/Form'
 import ShowQuotes from './components/ShowQuotes'
-import './App.css';
 import {main} from './components/quoteGenerator.js';
 
  
@@ -13,7 +12,7 @@ class App extends Component {
     };
   }
 
-  callback = (nbTheme, nbQuotes,quotes) => {
+  callback = (nbTheme, nbQuotes, quotes) => {
     var newQuotes = main(nbTheme, nbQuotes, quotes);
     this.setState({ generatedQuotes:  newQuotes});
   } 

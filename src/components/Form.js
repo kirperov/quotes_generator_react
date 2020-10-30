@@ -17,7 +17,7 @@ const Form = ({parentCallback}) => {
   }
 
   function submit() {
-    parentCallback(numberTheme,numberQuotes);
+    parentCallback(numberTheme, numberQuotes);
   }
   return (
     <div>
