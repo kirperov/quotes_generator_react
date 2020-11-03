@@ -1,4 +1,6 @@
 import { dataQuotes} from './constants.js';
+import { nbTheme} from './constants.js';
+import { nbQuotes} from './constants.js';
 
 export function main(selectTheme,selectNumbers) {  
     selectTheme = parseInt(selectTheme);
@@ -23,8 +25,8 @@ export function main(selectTheme,selectNumbers) {
         }
         return generatedQuote;
     }
-    
-    if(selectTheme <0 | selectNumbers <0 | selectTheme > 1 | selectNumbers > 5) {
+
+    if(selectTheme <0 | selectNumbers <0 | selectTheme > nbTheme.length -1   | selectNumbers > nbQuotes.length) {
         return generatedQuote;
     } else {
         return generateQuote();

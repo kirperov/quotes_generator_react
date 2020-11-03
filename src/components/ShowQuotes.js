@@ -1,26 +1,24 @@
 import React from 'react';
+import RenderMsgInfo from './RenderMsgInfo';
 
 const ShowQuotes = quotes => {
-  let html=null;
+  let html;
+  let renderListQuotes;
   const listQuotes = quotes.quotes;
   if(listQuotes.length === 0) {
-      html =  
-        <div className="mt-3 col-md-6">
-            <p className="alert alert-primary" role="alert"> Veillez choisir le thème et nombre de citations </p>
-        </div>;
+      html = <RenderMsgInfo/>
   } else {
-    const renderListQuotes = listQuotes.map((quote) =>
-    <li key={quote}>{quote.join(' ')}</li>
-    );
-    html = 
-      <div id="quotes" className="bg-light mt-3 col-md-6">
-        <ul>{renderListQuotes}</ul>
-      </div>;
+      renderListQuotes = listQuotes.map((quote) =>
+        <li key={quote}>{quote.join(' ')}</li>
+      );
+      html = <div id="quotes" className="bg-light mt-3">
+                <ol>{renderListQuotes}</ol>
+              </div>
   }
 
   return (
-    <div className="col-md-8">
-      {html}
+    <div>
+      { html }
     </div>
   )
 }
